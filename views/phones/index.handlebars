@@ -1,0 +1,55 @@
+<h1>Phones</h1>
+<div class="row">
+    {{#each phones}}
+        <div class="col s12 m4">
+            <div class="card">
+                <div class="card-image">
+                   {{#if user}}
+                        {{{editIcon user.id ../user.id id}}}
+                    {{/if}}
+                </div>
+                <div class="card-content center-align">
+                    <table class="striped">
+                    <thead>
+                        <tr colspan=2>
+                        <th><h5>{{name}}</h5></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th>Brand</th>
+                        <td>{{brand}}</td>
+                        </tr>
+                        <tr>
+                        <td>Size</td>
+                        <td>{{size}}</td>
+                        </tr>
+                        <tr>
+                        <td>Camera</td>
+                        <td>{{camera}}</td>
+                        </tr>
+                        <tr>
+                        <td>Battery</td>
+                        <td>{{battery}}</td>
+                        </tr>
+                        <tr>
+                        <td>Price</td>
+                        <td>{{prize}}</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                    <br>
+                    <div class="chip">
+                        <img src={{user.image}} alt="Profile Photo" style="width:50px;height:60px;" >
+                      <a href="phones/user/{{user.id}} ">  {{user.firstName}} {{user.lastName}}</a>
+                    </div>
+                    <div class="card-action center-align">
+                    <a class="btn grey" href="/phones/show/{{id}}">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+          {{else}}
+        <p>No Phones Found</p>
+    {{/each}}
+</div>
